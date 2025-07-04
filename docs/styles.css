@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    display: flex;
+    background-color: #333;
+    padding: 10px;
+}
+
+.tab {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #777;
+}
+
+#questions-container {
+    padding: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+}
