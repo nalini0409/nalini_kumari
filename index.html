@@ -2,23 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Resume</title>
+  <title>Resume & Website Tabs</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 0;
     }
-    embed {
+    .tab {
+      display: flex;
+      background-color: #333;
+    }
+    .tab button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .tab button:hover {
+      background-color: #575757;
+    }
+    .tab button.active {
+      background-color: #04AA6D;
+    }
+    .tabcontent {
+      display: none;
+      height: 90vh;
+    }
+    .tabcontent embed,
+    .tabcontent iframe {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       border: none;
     }
   </style>
 </head>
 <body>
-  <h1>My Resume</h1>
-  <embed src="resume.pdf" type="application/pdf">
+
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'Resume')">Resume</button>
+    <button class="tablinks" onclick="openTab(event, 'Website')">Website</button>
+  </div>
+
+  <div id="Resume" class="tabcontent" style="display: block;">
+    <embed src="resume.pdf" type="application/pdf">
+  </div>
+
+  <div id="Website" class="tabcontent">
+    <iframe src="https://github.com/nalini0409/nalini_kumari"></iframe>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.querySelectorAll(".tabcontent");
+      const tablinks = document.querySelectorAll(".tablinks");
+
+      tabcontent.forEach(tc => tc.style.display = "none");
+      tablinks.forEach(tl => tl.classList.remove("active"));
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
 </body>
 </html>
